@@ -15,4 +15,10 @@ describe('RepositoriesService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return repositories', () => {
+    expect(service).toBeDefined();
+  });
+
+
 });

@@ -18,31 +18,31 @@ export class RepositoriesController {
     );
   }
 
-  @Get()
-  nextPage(
-    @Query('link') link: string
-  ) {
-    return this.repositoriesService.nextPage(link);
-  }
+  // @Get()
+  // nextPage(
+  //   @Query('link') link: string
+  // ) {
+  //   return this.repositoriesService.nextPage(link);
+  // }
 
-  @Get()
-  prevPage(
-    @Query('link') link: string
-  ) {
-    return this.repositoriesService.prevPage(link);
-  }
+  // @Get()
+  // prevPage(
+  //   @Query('link') link: string
+  // ) {
+  //   return this.repositoriesService.prevPage(link);
+  // }
 
-  @Get()
-  firstPage(
-    @Query('link') link: string
-  ) {
-    return this.repositoriesService.firstPage(link);
-  }
+  // @Get()
+  // firstPage(
+  //   @Query('link') link: string
+  // ) {
+  //   return this.repositoriesService.firstPage(link);
+  // }
 
-  @Get()
-  lastPage(
-    @Query('link') link: string
-  ) {
-    return this.repositoriesService.lastPage(link);
-  }
+  // @Get()
+  // lastPage(
+  //   @Query('link') link: string
+  // ) {
+  //   return this.repositoriesService.lastPage(link);
+  // }
 }

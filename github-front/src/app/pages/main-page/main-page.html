@@ -1,0 +1,26 @@
+<app-header (search)="onSearch($event)"></app-header>
+
+<div class="cards-container" *ngIf="!isLoading()">
+  <app-card-component
+    *ngFor="let repo of repositories(); trackBy: trackById"
+    [repo]="repo"
+  ></app-card-component>
+</div>
+
+<div class="loading-container" *ngIf="isLoading()">
+  <div class="spinner"></div>
+  <p>Buscando repositórios...</p>
+</div>
+
+<div class="pagination" *ngIf="repositories().length && !isLoading()">
+  <button
+    (click)="prevPage()"
+    [disabled]="currentPage() === 1"
+  >
+    ◀ Anterior
+  </button>
+
+  <span>Página {{ currentPage() }}</span>
+
+  <button (click)="nextPage()">Próxima ▶</button>
+</div>

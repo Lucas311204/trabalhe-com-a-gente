@@ -1,0 +1,45 @@
+<div class="card" *ngIf="repo as r">
+  <img
+    class="card-image"
+    [src]="r.owner?.avatar_url"
+    alt="Avatar do proprietário"
+  />
+
+  <div class="card-content">
+    <h3 class="card-title">
+      {{ r.name }}
+    </h3>
+
+    <p class="card-description">
+      {{ r.description || 'Sem descrição disponível.' }}
+    </p>
+
+    <div class="card-footer">
+      <!-- Forks -->
+      <span class="card-meta">
+        <svg
+          class="icon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="6" cy="3" r="3"></circle>
+          <circle cx="6" cy="15" r="3"></circle>
+          <circle cx="18" cy="15" r="3"></circle>
+          <path d="M6 6v6"></path>
+          <path d="M6 18v-3a6 6 0 0 1 6-6h6"></path>
+        </svg>
+        {{ r.forks_count }}
+      </span>
+
+      <!-- Stars -->
+      <span class="card-meta stars">
+        ⭐ {{ r.stargazers_count }}
+      </span>
+    </div>
+  </div>
+</div>

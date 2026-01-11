@@ -1,0 +1,19 @@
+<div class="pagination">
+  <button
+    (click)="prev()"
+    [disabled]="!hasPrev"
+  >
+    ◀ Anterior
+  </button>
+
+  <span class="page">
+    Página {{ currentPage }}
+  </span>
+
+  <button
+    (click)="next()"
+    [disabled]="!hasNext"
+  >
+    Próxima ▶
+  </button>
+</div>
