@@ -26,11 +26,11 @@ onSearch(input: HTMLInputElement) {
 
 
   hasParam(param: string): boolean {
-    if (!param.trim()) {
-      this.hasParameter = false;
-      this.placeholderText = 'Necessário inserir o nome do repositório';
-      return false;
-    }
+    // if (!param.trim()) {
+    //   this.hasParameter = false;
+    //   this.placeholderText = 'Necessário inserir o nome do repositório';
+    //   return false;
+    // }
 
     this.hasParameter = true;
     this.placeholderText = 'Buscar repositório...';

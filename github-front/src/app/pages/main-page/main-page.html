@@ -1,5 +1,6 @@
 <app-header (search)="onSearch($event)"></app-header>
 
+@if (!errorMessage()){
 <div class="cards-container" *ngIf="!isLoading()">
   <app-card-component
     *ngFor="let repo of repositories(); trackBy: trackById"
@@ -13,14 +14,28 @@
 </div>
 
 <div class="pagination" *ngIf="repositories().length && !isLoading()">
+  <button name="first-button" (click)="firstPage()" [disabled]="currentPage() === 1">⏮ Primeira</button>
   <button
     (click)="prevPage()"
     [disabled]="currentPage() === 1"
+    name="prev-button"
   >
-    ◀ Anterior
+    ◀ 
   </button>
 
-  <span>Página {{ currentPage() }}</span>
+  <span name="page_number">{{currentPage()}}</span>
 
-  <button (click)="nextPage()">Próxima ▶</button>
+  <button name="next-button" (click)="nextPage()" [disabled]="currentPage() === lastPageNumber()"> ▶</button>
+  <button name="last-button" (click)="lastPage()" [disabled]="currentPage() === lastPageNumber()">⏭ Ultima</button>
 </div>
+
+}
+
+@else{
+  <span class="error-container">
+    <h1>500</h1>
+    <h2>Erro interno no servidor</h2>
+    <p>Este é um problema com o recurso buscado.</p>
+  </span>
+}
+

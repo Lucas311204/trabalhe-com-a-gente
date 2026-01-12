@@ -8,41 +8,14 @@ export class RepositoriesController {
 
   @Get()
   search(
-    @Query('name') name?: string,
+    @Query('name') name: string,
     @Query('page') page?: string
   ) {
     console.log(name, page);
     return this.repositoriesService.search(
-      name || 'bootstrap',
+      name,
       page ? Number(page) : 1
     );
   }
 
-  // @Get()
-  // nextPage(
-  //   @Query('link') link: string
-  // ) {
-  //   return this.repositoriesService.nextPage(link);
-  // }
-
-  // @Get()
-  // prevPage(
-  //   @Query('link') link: string
-  // ) {
-  //   return this.repositoriesService.prevPage(link);
-  // }
-
-  // @Get()
-  // firstPage(
-  //   @Query('link') link: string
-  // ) {
-  //   return this.repositoriesService.firstPage(link);
-  // }
-
-  // @Get()
-  // lastPage(
-  //   @Query('link') link: string
-  // ) {
-  //   return this.repositoriesService.lastPage(link);
-  // }
 }
