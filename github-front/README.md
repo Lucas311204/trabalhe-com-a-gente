@@ -1,59 +1,87 @@
-# GithubFront
+# Github Front - Front-end
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.5.
+Este é o front-end da aplicação Github API, desenvolvido com Angular. Ele fornece uma interface para buscar e visualizar repositórios do GitHub.
 
-## Development server
+## Funcionalidades
 
-To start a local development server, run:
+- Busca de repositórios do GitHub por nome.
+- Paginação de resultados.
+- Exibição de repositórios em cards.
+- Interface responsiva.
 
+## Tecnologias Utilizadas
+
+- **Angular**: Framework para construção de aplicações web.
+- **TypeScript**: Linguagem de programação tipada.
+- **RxJS**: Biblioteca para programação reativa.
+- **Cypress**: Framework para testes end-to-end.
+
+## Estrutura do Projeto
+
+- `src/`: Código fonte principal.
+  - `app/`: Módulo principal da aplicação.
+    - `pages/`: Páginas da aplicação.
+      - `main-page/`: Página principal.
+    - `components/`: Componentes reutilizáveis.
+      - `header/`: Componente de cabeçalho.
+      - `card-component/`: Componente de card para repositórios.
+    - `app.routes.ts`: Configuração de rotas.
+  - `main.ts`: Ponto de entrada da aplicação.
+- `cypress/`: Testes end-to-end.
+- `public/`: Arquivos estáticos.
+- `package.json`: Dependências e scripts.
+
+## Instalação
+
+1. Clone o repositório:
+   ```bash
+   git clone <url-do-repositorio>
+   cd github-front
+   ```
+
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+
+## Executando a Aplicação
+
+### Desenvolvimento
 ```bash
-ng serve
+npm start
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação será executada em `http://localhost:4200/`.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Build para Produção
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Os arquivos de build serão gerados na pasta `dist/`.
 
+## Testes
+
+### Testes Unitários
 ```bash
-ng generate --help
+npm test
 ```
 
-## Building
-
-To build the project run:
-
+### Testes E2E
 ```bash
-ng build
+npm run e2e
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Componentes Principais
 
-## Running unit tests
+- **Header**: Componente de cabeçalho com barra de busca.
+- **CardComponent**: Componente para exibir informações de repositórios.
+- **MainPage**: Página principal com listagem de repositórios.
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## Integração com Back-end
 
-```bash
-ng test
-```
+A aplicação se conecta ao back-end em `http://localhost:3000` para buscar dados de repositórios.
 
-## Running end-to-end tests
+## Licença
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Este projeto é privado.
