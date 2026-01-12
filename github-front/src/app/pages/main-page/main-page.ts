@@ -27,10 +27,6 @@ export class MainPage implements OnInit {
 
   ngOnInit(): void {
     this.reloadRepositories();
-
-    
-
-    console.log(this.repositories());
   }
 
   renderRepositories(items: any[]) {
@@ -40,8 +36,6 @@ export class MainPage implements OnInit {
 
   searchRepositories(name: string, page: number) {
     this.isLoading.set(true);
-    console.log("oi")
-    console.log(this.currentSearch())
     if(!name) {
       this.errorMessage.set(true);
     }

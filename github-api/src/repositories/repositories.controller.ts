@@ -11,7 +11,6 @@ export class RepositoriesController {
     @Query('name') name: string,
     @Query('page') page?: string
   ) {
-    console.log(name, page);
     return this.repositoriesService.search(
       name,
       page ? Number(page) : 1

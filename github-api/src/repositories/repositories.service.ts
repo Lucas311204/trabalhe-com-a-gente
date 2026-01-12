@@ -31,7 +31,6 @@ export class RepositoriesService {
       .pipe(
         map(response => {
           const linkHeader = response.headers['link'];
-          console.log(linkHeader);
           return {
             total_count: response.data.total_count,
             items: response.data.items,
@@ -103,7 +102,6 @@ export class RepositoriesService {
       const section = part.split(';');
       const url = section[0].replace(/<(.*)>/, '$1').trim();
       const rel = section[1].replace(/rel="(.*)"/, '$1').trim();
-      console.log(url, rel);
       links[rel] = url;
     });
 
